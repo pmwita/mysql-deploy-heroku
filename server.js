@@ -20,12 +20,22 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.static('public'));
 
+
+// const con = mysql.createConnection({
+//     host: "localhost",
+//     user: "root",
+//     password: "Admin123!",
+//     database: "signup"
+// })
+
 const con = mysql.createConnection({
     host: "us-cdbr-east-06.cleardb.net",
     user: "b120ccb8f75435",
     password: "a54b8eee!",
     database: "heroku_c6427faa42e3af1"
 })
+
+
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
