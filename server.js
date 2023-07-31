@@ -8,6 +8,7 @@ import multer from 'multer'
 import path from 'path'
 
 const app = express();
+const PORT = process.env.PORT || 8081;
 app.use(cors(
     {
         origin: ["http://localhost:5173"],
@@ -197,6 +198,7 @@ app.post('/create',upload.single('image'), (req, res) => {
     } )
 })
 
-app.listen(8081, ()=> {
-    console.log("Running");
+app.listen(PORT, ()=> {
+    // console.log("Running");
+    console.log(`server started on port ${PORT}`);
 })
